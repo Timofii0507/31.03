@@ -3,10 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:_31._03"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid x:Name="MainGrid" 
+          materialDesign:HintAssist.Background="{DynamicResource MaterialDesignPaper}">
+        <Grid.Resources>
+            <local:WidthConverter x:Key="WidthConverter"/>
+        </Grid.Resources>
+        <WrapPanel HorizontalAlignment="Left" 
+               Width="{Binding RelativeSource={RelativeSource AncestorType=Grid}, 
+        Path=ActualWidth, Converter={StaticResource WidthConverter}}">
+            <Button Content="Navy" Foreground="#001F3F" Margin="2"/>
+            <Button Content="Blue" Foreground="#0074D9" Margin="2"/>
+            <Button Content="Aqua" Foreground="#7FDBFF" Margin="2"/>
+            <Button Content="Teal" Foreground="#39CCCC" Margin="2"/>
+            <Button Content="Olive" Foreground="#3D9970" Margin="2"/>
+            <Button Content="Green" Foreground="#2ECC40" Margin="2"/>
+            <Button Content="Lime" Foreground="#01FF70" Margin="2"/>
+            <Button Content="Yellow" Foreground="#FFDC00" Margin="2"/>
+            <Button Content="Orange" Foreground="#FF851B" Margin="2"/>
+            <Button Content="Red" Foreground="#FF4136" Margin="2"/>
+            <Button Content="Maroon" Foreground="#85144B" Margin="2"/>
+            <Button Content="Fuchsia" Foreground="#F012BE" Margin="2"/>
+            <Button Content="Purple" Foreground="#B10DC9" Margin="2"/>
+            <Button Content="Black" Foreground="#111111" Margin="2"/>
+            <Button Content="Silver" Foreground="#DDDDDD" Margin="2"/>
+            <Button Content="Gray" Foreground="#AAAAAA" Margin="2"/>
+            <Button Content="White" Foreground="#FFFFFF" Margin="2"/>
+        </WrapPanel>
     </Grid>
 </Window>
